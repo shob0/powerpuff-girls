@@ -3,17 +3,25 @@ import Episode from "./Episodes";
 import "./Shows.css";
 import Title from "./View/Title";
 import Details from "./View/Details";
-import BackButton from "./View/BackButton";
 
 function Shows(props) {
   const show = props.show;
-  const rating = Object.keys(show.rating)[0];
+  const rating = show.rating;
   return (
-    <div>
-      <Title name={show.name} rating={rating} />
-      <Details image={show.image.medium} summary={show.summary} />
+    <>
+      <div className="show-main-div">
+        <Title name={show.name} rating={rating} />
+
+        <div className="details-box">
+          <Details
+            image={show.image}
+            summary={show.summary}
+            imgAlt={show.url}
+          />
+        </div>
+      </div>
       <Episode />
-    </div>
+    </>
   );
 }
 

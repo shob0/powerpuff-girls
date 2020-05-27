@@ -1,11 +1,11 @@
 import React from "react";
 import Header from "./Component/Header";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./Component/Landing";
 import Episode from "./Component/Episode";
 import store from "./Redux/store";
 import "./App.css";
-import { Provider } from "react-redux";
 
 function App() {
   return (
@@ -14,12 +14,8 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route path="/episode">
-              <Episode />
-            </Route>
-            <Route path="/">
-              <Landing />
-            </Route>
+            <Route path="/episode" component={Episode} />
+            <Route path="/" component={Landing} />
           </Switch>
         </Router>
       </div>

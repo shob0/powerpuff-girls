@@ -20,15 +20,18 @@
 
 .main {
   margin-top: 4rem;
-  width: 60%;
+  /* width: 60%; */
   margin-left: 100px;
 }
 
 .Header-link {
   color: snow;
-  text-decoration: none;
+
   border-radius: 3px;
   transition: all 400ms;
+}
+a {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -40,7 +43,13 @@
     /* border-bottom: 0; */
   }
 
-  .main {
-    margin: 0 auto;
+  .show-main-div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .show-main-div {
+    width: 100%;
   }
 }

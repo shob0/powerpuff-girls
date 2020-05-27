@@ -66,7 +66,7 @@ export function getShowdetails(url) {
       .then((res) => {
         var data = processShowData(res.data);
         dispatch(fetchShowsSuccess(data));
-        var firstKey = Object.keys(data)[0];
+        // var firstKey = Object.keys(data)[0];
         //Defaulting it to 6771 for use powerpuff girls
         dispatch(selectedShow(6771));
       })

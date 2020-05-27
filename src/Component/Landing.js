@@ -10,10 +10,14 @@ function Landing(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(
-      getShowdetails("http://api.tvmaze.com/search/shows?q=the-powerpuff-girls")
-    );
-  }, [dispatch]);
+    if (show === undefined) {
+      dispatch(
+        getShowdetails(
+          "http://api.tvmaze.com/search/shows?q=the-powerpuff-girls"
+        )
+      );
+    }
+  }, [dispatch, show]);
   return (
     <div className="main">
       {show === undefined && <div>Loading</div>}
