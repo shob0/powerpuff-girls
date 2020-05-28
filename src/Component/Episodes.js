@@ -9,7 +9,7 @@ function Episode() {
   const episodes = useSelector((state) => state.episodes);
   const name = useSelector((state) => state.shows[showId].name);
 
-  const url = `http://api.tvmaze.com/shows/${showId}/episodes`;
+  const url = `https://api.tvmaze.com/shows/${showId}/episodes`;
 
   useEffect(() => {
     if (episodes === undefined) {

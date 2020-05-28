@@ -13,7 +13,7 @@ function Landing(props) {
     if (show === undefined) {
       dispatch(
         getShowdetails(
-          "http://api.tvmaze.com/search/shows?q=the-powerpuff-girls"
+          "https://api.tvmaze.com/search/shows?q=the-powerpuff-girls"
         )
       );
     }
