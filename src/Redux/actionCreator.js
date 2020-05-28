@@ -10,6 +10,8 @@ import {
 } from "./action";
 import axios from "axios";
 import { processShowData } from "../Services/services";
+import SHOWS from "../Local/Shows.json";
+import EPISODES from "../Local/Episode.json";
 
 export function fetchShowsPending() {
   return {
@@ -61,26 +63,14 @@ export function selectedEpisode(episode) {
 
 export function getShowdetails(url) {
   return (dispatch: Function) => {
-    axios
-      .get(url)
-      .then((res) => {
-        var data = processShowData(res.data);
-        dispatch(fetchShowsSuccess(data));
-        // var firstKey = Object.keys(data)[0];
-        //Defaulting it to 6771 for use powerpuff girls
-        dispatch(selectedShow(6771));
-      })
-      .catch((err) => dispatch(fetchShowsError(err.data)));
+    var data = processShowData(SHOWS);
+    dispatch(fetchShowsSuccess(data));
+    dispatch(selectedShow(6771));
   };
 }
 
 export function getEpisodedetails(url) {
   return (dispatch: Function) => {
-    axios
-      .get(url)
-      .then((res) => {
-        dispatch(fetchEpisodeSuccess(res.data));
-      })
-      .catch((err) => dispatch(fetchEpisodeError(err.data)));
+    dispatch(fetchEpisodeSuccess(EPISODES));
   };
 }
