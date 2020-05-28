@@ -48,8 +48,14 @@ a {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 450px) {
   .show-main-div {
+    width: 100%;
+  }
+  .main {
+    margin: 0;
+  }
+  .Episode {
     width: 100%;
   }
 }
